@@ -54,7 +54,7 @@ def solving(choice, diffs, masses):
     luminosity = [];
     rho = 0;
     
-    #Defining the values that need to be uploaded onto a table later
+    #Defining the values that need to be uploaded onto a table later. They are inserted where appropriate in the solving funciton
     density = [];
     eGeneration = [];
     opacity = [];
@@ -63,7 +63,7 @@ def solving(choice, diffs, masses):
     
     #The if-else statement to determine if we're starting from the center or surface
     if choice == 1:
-        m = 0;              #Name: Mass
+        m = 0; 
         
         L, r, P, T = intialCenter(diffs[0], diffs[1], diffs[2], diffs[3]);
         
@@ -89,11 +89,16 @@ def solving(choice, diffs, masses):
         density.append(rho);
 
     #Since the values are always changing, this for loop will incremement through the mass array one mass at a time and add to the 
-    #depenedent variable arrays one at a time, to be able to use updated values of radius, pressure, temperature, and luminosity
+    #depenedent variable arrays one at a time, to be able to use updated values of radius, pressure, temperature, and luminosity. The
+    #temp array holds the current dependent values so they can be appended to the appropriate arrays with out adding in the previous 
+    #value an additional time.
     
     for i in range(len(masses) - 1):
         
+        #The current mass shell to be integrated
         currMass = (masses[i], masses[i+1]);
+        
+        #Appending density constantly so it is the same length as other arrays for ease of putting into a tbale
         density.append(rho);
         
         #The mass conservation differential eqauation
@@ -132,15 +137,3 @@ def solving(choice, diffs, masses):
             
     
     return radius, pressure, temperature, luminosity, density, eGeneration, opacity, adiabaticGrad;
-
-
-# massCent = np.linspace(0, mass/2, 50);
-# w, x, y, z, l, m, n, o = solving(1, [0.15, 0.15, 0.15, 0.15], massCent)
-
-# massSurf = np.linspace(mass, mass/2, 50);
-# w, x, y, z = solving(2, [0.15, 0.15, 0.15, 0.15], massSurf)
-
-# print(w);
-# print(x)
-# print(y)
-# print(z)

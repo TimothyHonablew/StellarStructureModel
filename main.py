@@ -39,7 +39,7 @@ Z = 0.050                       #Units: N/A
 mu = 4/(3 + 5*X)                #Units: N/A
 
 
-#Creating the array of masses and percent differences
+#Creating the array of masses and percent differences as well as the last index to check for convergence
 massCent = np.linspace(10**-5, mass/2, 100);
 massSurf = np.linspace(mass, mass/2, 100);
 diffsCenter = [0.15, 0.15, 0.15, 0.15];

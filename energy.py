@@ -1,6 +1,7 @@
 #Name: Timothy Honablew
 #Date: November 13th, 2023 CE
-#Purpose: Calculating the rate of energy generation for the 1D stellar model project.
+#Purpose: Calculating the rate of energy generation for the 1D stellar model project. This was calculated from equations 18.63 and 18.65
+#         from the Stellar Structure and Evolution textbook.
 
 import numpy as np
 from density import *

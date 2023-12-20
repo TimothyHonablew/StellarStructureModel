@@ -14,7 +14,6 @@ from scipy.interpolate import LinearNDInterpolator
 Tk().withdraw();
 fileName = askopenfilename();
 
-
 #Accessing the data in the excel file
 wb = load_workbook(fileName);
 ws = wb.active;
@@ -40,6 +39,7 @@ columnR = ws['R'];
 columnS = ws['S'];
 columnT = ws['T'];
 
+#Putting the data into a usable format
 A = [cell.value for cell in columnA[2:]];
 B = [cell.value for cell in columnB[2:]];
 C = [cell.value for cell in columnC[2:]];

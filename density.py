@@ -1,6 +1,7 @@
 #Name: Timothy Honablew
 #Date: November 13th, 2023 CE
-#Purpose: Calculating the density of the model star based on pressure, temperature, and composition.
+#Purpose: Calculating the density of the model star based on pressure, temperature, and composition using the ideal gas equation of
+#         state with radiation included solved for density.
 
 def currentDensity(temperature, pressure):
     
